@@ -1,0 +1,16 @@
+FIXED COMPILER ERROR: wrong sinricpro_fan_send_range_value_event argument type.
+
+Option A — New project:
+1. Extract this folder into C:\ESP32Projects (NO SPACES in project path).
+2. Open project folder in VS Code.
+3. Copy src\app_secrets.h.example to src\app_secrets.h, insert your PRIVATE, rotated Wi-Fi / Sinric values.
+4. pio test
+5. pio check -e sinric_lab --skip-packages
+6. pio run -e sinric_lab
+7. Close serial monitor, then pio run -e sinric_lab -t upload
+
+Option B — Keep your existing working project and private secrets:
+Run this FROM the extracted NEW project folder in PowerShell:
+powershell -ExecutionPolicy Bypass -File .\APPLY_COMPILE_FIX.ps1 -Target "C:\ESP32Projects\SmartFanRangeFix"
+
+NOTE: This removes a compile error. If Alexa sends setRangeValue, SinricPro ESP-IDF v1.3.0 may still lack that Fan capability; watch serial logs and read README.md.

@@ -1,0 +1,5 @@
+# Your ESP32 reported 2 MB flash in the uploader log.
+CONFIG_ESPTOOLPY_FLASHSIZE_2MB=y
+# One factory app, no OTA dual-slot partitions.
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions_2mb.csv"
